@@ -5,35 +5,80 @@
 <!-- VFW Project 1 1302 -->
 
 <html>
-<head>
+	<head>
     	<meta charset="utf-8" />
     	<meta name="description" content="Video game review welcome page" />
+        <meta name="keywords" content="videogames, list, reviews" />
     	<meta name="robots" content="noindex, nofollow" />
     	<meta name="viewport" content="user-scalable=no, width=device-width" />
     	<meta name="viewport" content="target-densitydpi=device-dpi" />
     	<meta name="HandheldFriendly" content="True" />
     	<meta name="MobileOpimized" content="320" />
-<title>Add a video game review.</title>
-</head>
-<body>
-    	<h1>Add A Game Review</h1>
-        <fieldset>
-        	<legend>Game Review</legend>
-            <ul>
-            	<li>
-                	<label for="wn">Game Name:</label><input type="text" id="wn" placeholder="The Legend of Zelda: Skyward Sword" />
-                </li>
-                <li>
-                	<label for="wc">Game Catergory:</label>
-                    <select id="wc">
-                    	<optgroup label="Catergory">
-                        	<option value="Role-Playing">Role-Playing</option>
-                            <option value="FPS">First Person Shooter</option>
-                            <option value="Racing">Racing</option>
-                            <option value="Strategy">Strategy</option>
-                        </optgroup>
-              		</select>
-                </li>
-                        
+		<title>Add a video game review.</title>
+	</head>
+	<body>
+   	<h1>Add A Game Review</h1>
+    <fieldset>
+   	  <legend>Game Review</legend>
+        <ul>
+           	<li>
+               	<label for="gc">Game Catergory:</label>
+                <select id="gc">
+                   	<optgroup label="Catergory">
+                        <option value="Action">Action</option>
+                        <option value="Adventure">Adventure</option> 
+                        <option value="FPS">First Person Shooter</option>
+                        <option value="Racing">Racing</option>                      	
+                        <option value="Role-Playing">Role-Playing</option>
+                        <option value="Strategy">Strategy</option>
+                    </optgroup>
+       		    </select>
+		    </li>
+            <br />
+           	<li>
+               	<label for="gn">Game Name: </label><input type="text" id="wn" placeholder="The Legend of Zelda: Skyward Sword" />
+            </li>
+            <br />
+            <li>
+               	<label for="gp">Game Publisher: </label>
+               	<input type="text" id="gp" placeholder="Nintendo" />
+            </li>
+            <br />
+            <li>
+               	<label for="grelease">Game Release Date: </label>
+               	<input type="date" id="grelease" />
+            </li>
+            <br />
+            <li>
+               	<label for="grate">Game Rating(0-10): </label>
+                <input type="range" id="grate" min="0" max="10" />
+            </li>
+            <br />
+            <li>Game Console:
+            	<ul>
+            		<li>
+                    	<input type="radio" id="xbox360" value="Xbox 360" name="console" /><label for="xbox360"> Xbox 360</label>
+                    </li>
+                    <li>
+                    	<input type="radio" id="ps3" value="ps3" name="console" /><label for"ps3"> Playstation 3</label>
+                    </li>
+                    <li>
+                    	<input type="radio" id="wii" value="wii" name="console" /><label for"wii"> Wii</label>
+                    </li>
+                </ul>
+            </li>
+            <li>
+            	<label for="comments">Comments: </label><textarea id="comments" placeholder="This game was amazing A++!"></textarea>
+            </li>
+	    </ul>
+	  </fieldset>
+      <input type="hidden" name="country" value="USA" />
+      <input type="button" value="Add Review" name="submit" />
+      <footer>
+      	<nav>
+        	<a href="#" title="clearData">Clear Data</a>
+            <a href="#" title="displayData">Display Data</a>
+        </nav>
+      </footer>                       
 	</body>
 </html>
