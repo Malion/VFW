@@ -54,9 +54,6 @@ legend {
 #gamePublisher {
 	display: block;
 }
-#gameCountry {
-	display: block;
-}
 #gameRelease {
 	display: block;
 }
@@ -73,16 +70,25 @@ legend {
 	font-weight: bold;
 }
 #xbox360 {
+	margin-bottom: 1px;
+}
+.xbox360 {
 	font-weight:normal;
 	font-size:16px;
 	margin-bottom: 1px;
 }
 #ps3 {
+	margin-bottom: 1px;
+}
+.ps3 {
 	font-weight:normal;
 	font-size:16px;
 	margin-bottom: 1px;
 }
 #wii {
+	margin-bottom: 1px;
+}
+.wii {
 	font-weight:normal;
 	font-size:16px;
 	margin-bottom: 1px;
