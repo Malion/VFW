@@ -1,0 +1,82 @@
+/* 
+ Jesse James 
+ 2-11-2013 
+ VFW Project 2 1302 
+*/
+
+label {
+	font-weight: bold;
+	font-size:20px;
+}
+select {
+	margin-bottom:10px;
+}
+input {
+	margin-bottom:10px;
+}
+textarea {
+	margin:10px;
+}
+#gameConsole {
+	font-size: 20px;
+	font-weight: bold;
+}
+#gameCatergory {
+	display: block;
+}
+#gameName {
+	display: block;
+}
+#gamePublisher {
+	display: block;
+}
+#gameRelease {
+	display: block;
+}
+#gameRate {
+	display: block;
+	width: 250px;
+	alignment-baseline:middle
+}
+#gameCountry {
+	display: block;
+}
+#addGameReview {
+	font-family: "MS Serif", "New York", serif;
+	color: #000;
+	background-color: #0CF;
+	width: 300px;
+	border: 2px dashed black;
+}
+#xbox360 {
+	font-weight:normal;
+	font-size:16px;
+	margin-bottom: 1px;
+}
+#ps3 {
+	font-weight:normal;
+	font-size:16px;
+	margin-bottom: 1px;
+}
+#wii {
+	font-weight:normal;
+	font-size:16px;
+	margin-bottom: 1px;
+}
+#consoleList {
+	list-style-type:none;
+}
+fieldset {
+	background-color: #0CF;
+	width: 300px;
+	border: 2px dashed black;
+}
+legend {
+	border: 1px solid black;
+	background-color:#0CF;
+	font-size:24px;
+	font-weight:bold;
+}
+body {
+	background-color: #CCC;
+}

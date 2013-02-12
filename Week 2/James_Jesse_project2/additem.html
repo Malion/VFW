@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<!-- Jesse James -->
+<!-- 2-11-2013 -->
+<!-- VFW Project 2 1302 -->
+
+<html>
+	<head>
+    	<meta charset="utf-8" />
+    	<meta name="description" content="Video game review welcome page" />
+        <meta name="keywords" content="videogames, list, reviews" />
+    	<meta name="robots" content="noindex, nofollow" />
+    	<meta name="viewport" content="user-scalable=no, width=device-width" />
+    	<meta name="viewport" content="target-densitydpi=device-dpi" />
+    	<meta name="HandheldFriendly" content="True" />
+    	<meta name="MobileOpimized" content="320" />
+		<title>Add a video game review.</title>
+        <script type="text/javascript" src="js/main.js"></script>
+        <link rel="stylesheet" href="css/styles.css" type="text/css" />
+	</head>
+	<body>
+   	<h1 id="addGameReview">Add A Game Review</h1>
+    <fieldset>
+   	  <legend>Game Review</legend>
+        <ul>
+           	<li>
+           	  <label for="gameCatergory">Game Catergory:</label>
+                <select id="gameCatergory">
+                   	<optgroup label="Catergory">
+                        <option value="Action">Action</option>
+                        <option value="Adventure">Adventure</option> 
+                        <option value="FPS">First Person Shooter</option>
+                        <option value="Racing">Racing</option>                      	
+                        <option value="Role-Playing">Role-Playing</option>
+                        <option value="Strategy">Strategy</option>
+                    </optgroup>
+       		    </select>
+		    </li>
+           	<li>
+               	<label for="gameName">Game Name: </label><input type="text" id="gameName" placeholder="The Legend of Zelda: Skyward Sword" />
+            </li>
+            <li>
+               	<label for="gamePublisher">Game Publisher: </label>
+               	<input type="text" id="gamePublisher" placeholder="Nintendo" />
+            </li>
+            <li>
+            	<label for="gameCountry">Origin Country: </label>
+                <input type="text" id="gameCountry" placeholder="Japan" />
+            </li>
+            <li>
+               	<label for="gameRelease">Game Release Date: </label>
+               	<input type="date" id="gameRelease" />
+            </li>
+            <li>
+               	<label for="gameRate">Game Rating(0-10): </label>
+                <input type="range" id="gameRate" min="0" max="10" />
+            </li>
+            <li id="gameConsole">Game Console:
+            	<ul id="consoleList">
+            		<li>
+                    	<input type="radio" id="xbox360" value="Xbox 360" name="console" /><label for="xbox360" id="xbox360"> Xbox 360</label>
+                    </li>
+                    <li>
+                    	<input type="radio" id="ps3" value="ps3" name="console" /><label for"ps3" id="ps3"> Playstation 3</label>
+                    </li>
+                    <li>
+                    	<input type="radio" id="wii" value="wii" name="console" /><label for"wii" id="wii"> Wii</label>
+                    </li>
+                </ul>
+            </li>
+            <li>
+            	<label for="comments">Comments: </label><textarea id="comments" placeholder="This game was amazing A++!"></textarea>
+            </li>
+	    </ul>
+	  </fieldset>
+      <input id="submitButton" type="button" value="Add Review" name="submit" />
+      <footer>
+      	<nav>
+        	<a href="#" title="clearData">Clear Data</a>
+            <a href="#" title="displayData">Display Data</a>
+        </nav>
+      </footer>                       
+	</body>
+</html>
