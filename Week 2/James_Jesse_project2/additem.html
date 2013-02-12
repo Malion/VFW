@@ -5,6 +5,7 @@
 <!-- VFW Project 2 1302 -->
 
 <html>
+	<!-- Header -->
 	<head>
     	<meta charset="utf-8" />
     	<meta name="description" content="Video game review welcome page" />
@@ -15,11 +16,13 @@
     	<meta name="HandheldFriendly" content="True" />
     	<meta name="MobileOpimized" content="320" />
 		<title>Add a video game review.</title>
-        <script type="text/javascript" src="js/main.js"></script>
+   		<script type="text/javascript" src="js/main.js"></script>
         <link rel="stylesheet" href="css/styles.css" type="text/css" />
 	</head>
+    <!-- Body -->
 	<body>
    	<h1 id="addGameReview">Add A Game Review</h1>
+    <!-- Input Fields -->
     <fieldset>
    	  <legend>Game Review</legend>
         <ul>
@@ -58,7 +61,8 @@
             <li id="gameConsole">Game Console:
             	<ul id="consoleList">
             		<li>
-                    	<input type="radio" id="xbox360" value="Xbox 360" name="console" /><label for="xbox360" id="xbox360"> Xbox 360</label>
+                    	<input type="radio" id="xbox360" value="Xbox 360" name="console" />
+                    	<label for="xbox360" id="xbox360"> Xbox 360</label>
                     </li>
                     <li>
                     	<input type="radio" id="ps3" value="ps3" name="console" /><label for"ps3" id="ps3"> Playstation 3</label>
@@ -73,12 +77,14 @@
             </li>
 	    </ul>
 	  </fieldset>
+      <!-- Submit Button -->
       <input id="submitButton" type="button" value="Add Review" name="submit" />
+      <!-- Footer -->
       <footer>
       	<nav>
         	<a href="#" title="clearData">Clear Data</a>
             <a href="#" title="displayData">Display Data</a>
         </nav>
       </footer>                       
-	</body>
+</body>
 </html>

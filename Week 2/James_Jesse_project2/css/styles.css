@@ -4,6 +4,7 @@
  VFW Project 2 1302 
 */
 
+/*Universal*/
 label {
 	font-weight: bold;
 	font-size:20px;
@@ -17,9 +18,28 @@ input {
 textarea {
 	margin:10px;
 }
-#gameConsole {
-	font-size: 20px;
-	font-weight: bold;
+/*Header*/
+#addGameReview {
+	font-family: "MS Serif", "New York", serif;
+	color: #000;
+	background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #00A3EF 100%);
+	width: 300px;
+	border: 2px dashed black;
+}
+/*Body*/
+body {
+	background-color: #CCC;
+}
+fieldset {
+	background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #00A3EF 100%);
+	width: 300px;
+	border: 2px dashed black;
+}
+legend {
+	border: 1px solid black;
+	background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #00A3EF 100%);
+	font-size:24px;
+	font-weight:bold;
 }
 #gameCatergory {
 	display: block;
@@ -30,6 +50,9 @@ textarea {
 #gamePublisher {
 	display: block;
 }
+#gameCountry {
+	display: block;
+}
 #gameRelease {
 	display: block;
 }
@@ -38,15 +61,12 @@ textarea {
 	width: 250px;
 	alignment-baseline:middle
 }
-#gameCountry {
-	display: block;
+#consoleList {
+	list-style-type:none;
 }
-#addGameReview {
-	font-family: "MS Serif", "New York", serif;
-	color: #000;
-	background-color: #0CF;
-	width: 300px;
-	border: 2px dashed black;
+#gameConsole {
+	font-size: 20px;
+	font-weight: bold;
 }
 #xbox360 {
 	font-weight:normal;
@@ -63,20 +83,21 @@ textarea {
 	font-size:16px;
 	margin-bottom: 1px;
 }
-#consoleList {
-	list-style-type:none;
+/*Footer*/
+a:link {
+	color: #00C;
+	text-decoration: underline;
 }
-fieldset {
-	background-color: #0CF;
-	width: 300px;
-	border: 2px dashed black;
+a:visited {
+	text-decoration: underline;
+	color: #30C;
 }
-legend {
-	border: 1px solid black;
-	background-color:#0CF;
-	font-size:24px;
-	font-weight:bold;
+a:hover {
+	text-decoration: none;
+	color: #306;
 }
-body {
-	background-color: #CCC;
+a:active {
+	text-decoration: underline;
+	color: #00C;
 }
+
