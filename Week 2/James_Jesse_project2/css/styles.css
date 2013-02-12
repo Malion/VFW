@@ -22,7 +22,7 @@ textarea {
 #addGameReview {
 	font-family: "MS Serif", "New York", serif;
 	color: #000;
-	background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #00A3EF 100%);
+	background-image: -webkit-linear-gradient(top right, #00A3EF 0%, #00618F 100%);
 	width: 300px;
 	border: 2px dashed black;
 }
@@ -37,9 +37,13 @@ fieldset {
 }
 legend {
 	border: 1px solid black;
-	background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #00A3EF 100%);
+	background-image: -webkit-linear-gradient(top right, #00A3EF 0%, #00618F 100%);
 	font-size:24px;
 	font-weight:bold;
+}
+#addItemForm {
+	border: 1px solid black;
+	background-image: -webkit-linear-gradient(top right, #00A3EF 0%, #00618F 100%);
 }
 #gameCatergory {
 	display: block;
