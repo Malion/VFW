@@ -21,6 +21,9 @@ function toggle(n){
 	switch(n){
 		case"on":
 			document.getElementById("addItemField").style.display = "none";
+			document.getElementById("clearData").style.display = "none";
+			document.getElementById("displayData").style.display = "none";
+			document.getElementById("submitButton").hidden = "hidden";
 		case"off":
 			document.getElementById("addItemField").removeAttribute("display", "block");
 	}	
@@ -107,26 +110,32 @@ function displayLocalStorage(){
 		return;
 	}
 	toggle("on");
-	var newDiv = document.body.createElement("div");
+	var newDiv = document.createElement("ol");
 	newDiv.setAttribute("id", "list");
 	newDiv.setAttribute("display", "block");
-	var newList = document.body.createElement("ul");
+	var newList = document.createElement("ul");
 	newDiv.appendChild(newList);
 	document.body.appendChild(newDiv);
-	for(i=0; i<localStorage.length; i++){
-		var newLi = document.body.createElement("ol");
+	for(i=0, len=localStorage.length; i<len; i++){
+		var newLi = document.createElement("ol");
 		newList.appendChild(newLi);
-		var key = localStorage.key[i];
-		var value = localStorage.getItem[key];
+		var key = localStorage.key(i);
+		var value = localStorage.getItem(key);
+		console.log(value)
 		var newObj = JSON.parse(value);
-		var newSubUl = document.body.createElement("ul");
+		var newSubUl = document.createElement("ul");
 		newLi.appendChild(newSubUl);
 		for(var n in newObj) {
-			var newSubLi = document.body.createElement("li");
+			var newSubLi = document.createElement("li");
 			newSubUl.appendChild(newSubLi);
 			var newText = newObj[n][0]+" "+newObj[n][1];
 			newSubLi.innerHTML = newText;
 		}
+		var back = document.createElement("input");
+		back.setAttribute("type", "button");
+		back.setAttribute("id", "back");
+		back.setAttribute("value", "Back");
+		back
 	}
 };
 //Event Listeners
