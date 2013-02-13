@@ -93,12 +93,35 @@ legend {
 	font-size:16px;
 	margin-bottom: 1px;
 }
-#list {
+.displayDataList {
 	border: 1px dashed black;
 	background-image: -webkit-linear-gradient(top right, #00A3EF 0%, #00618F 100%);
 	width: 300px;
-	font-size:16px;
+	font-size:20px;
 	font-weight:bold;
+	list-style:none;
+}
+/*Displayed Data*/
+.catergory {
+	margin-bottom: 5px;
+}
+.name {
+	margin-bottom: 5px;
+}
+.publisher {
+	margin-bottom: 5px;
+}
+.release {
+	margin-bottom: 5px;
+}
+.rate {
+	margin-bottom: 5px;
+}
+.console {
+	margin-bottom: 5px;
+}
+.comments {
+	margin-bottom: 5px;
 }
 /*Footer*/
 a:link {

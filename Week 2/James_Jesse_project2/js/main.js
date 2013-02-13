@@ -70,7 +70,7 @@ function saveGame(){
 	newType.release = ["Game Release: ", gameRelease.value];
 	newType.rate = ["Game Rating: ", gameRate.value];
 	newType.console = ["Game Console: ", getConsole()];
-	newType.comments = ["Comments : ", comments.value];
+	newType.comments = ["Comments: ", comments.value];
 	localStorage.setItem(newId, JSON.stringify(newType));
 	alert(gameName.value + " Game Review Added!");
 };
@@ -90,23 +90,23 @@ function displayLocalStorage(){
 	if(localStorage.length === 0){
 		alert("There are no saved reviews!");
 		return;
-	}
+	};
 	toggle("on");
-	var newDiv = document.createElement("ul");
-	newDiv.setAttribute("id", "list");
-	newDiv.setAttribute("display", "block");
-	document.body.appendChild(newDiv);
-	for(i=0, len=localStorage.length; i<len; i++){
-		var key = localStorage.key(i);
-		var value = localStorage.getItem(key);
-		var newObj = JSON.parse(value);
+	for(var o in localStorage){
+		var newObj = JSON.parse(localStorage[o])
+		var newDiv = document.createElement("ul");
+		newDiv.setAttribute("class", "displayDataList");
+		newDiv.setAttribute("display", "block");
+		document.body.appendChild(newDiv);
 		for(var n in newObj) {
 			var newLi = document.createElement("li");
+			newLi.setAttribute("class", n);
 			newDiv.appendChild(newLi);
 			var newText = newObj[n][0]+" "+newObj[n][1];
 			newLi.innerHTML = newText;
-		}
-	}
+		};
+		
+	};
 };
 //Event Listeners
 var cat = submitButton.addEventListener("click", getCatergory);
