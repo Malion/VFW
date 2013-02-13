@@ -13,9 +13,6 @@ var comments = document.getElementById("comments");
 var clearData = document.getElementById("clearData");
 var displayData = document.getElementById("displayData");
 var submitButton = document.getElementById("submitButton");
-//Capture Past Data
-
-
 //Toggle
 function toggle(n){
 	switch(n){
@@ -24,15 +21,15 @@ function toggle(n){
 			document.getElementById("clearData").style.display = "none";
 			document.getElementById("displayData").style.display = "none";
 			document.getElementById("submitButton").hidden = "hidden";
+			document.getElementById("addGameReview").innerHTML = "Game List";
 		case"off":
 			document.getElementById("addItemField").removeAttribute("display", "block");
 	}	
 }
-
-//console.log values
-
+//Get value functions
 var getCatergory = function(){
-	console.log(gameCatergory.value);
+	var cat = gameCatergory.value;
+	return(cat);
 };
 var getName = function(){
 	var nam = gameName.value;
@@ -63,35 +60,20 @@ var getComments = function(){
 	var com = comments.value;
 	return(com);
 };
-/*
-var getCatergory = function(){
-	localStorage.setItem("Game Catergory", gameCatergory.value);
+//Save Data
+function saveGame(){
+	var newId = Math.floor(Math.random()*1000000001)
+	var newType = {};
+	newType.catergory = ["Game Catergory: ", gameCatergory.value];
+	newType.name = ["Game Name: ", gameName.value];
+	newType.publisher = ["Game Publisher: ", gamePublisher.value];
+	newType.release = ["Game Release: ", gameRelease.value];
+	newType.rate = ["Game Rating: ", gameRate.value];
+	newType.console = ["Game Console: ", getConsole()];
+	newType.comments = ["Comments : ", comments.value];
+	localStorage.setItem(newId, JSON.stringify(newType));
+	alert(gameName.value + " Game Review Added!");
 };
-var getName = function(){
-	localStorage.setItem("Game Name", gameName.value);
-};
-var getPublisher = function(){
-	localStorage.setItem("Game Publisher", gamePublisher.value);
-};
-var getRelease = function(){
-	localStorage.setItem("Game Release Date", gameRelease.value);
-};
-var getRate = function(){
-	localStorage.setItem("Game Rating", gameRate.value);
-};
-var getConsole = function(){
-	var consoleList = [];
-	for(i=0, j=gameConsole.length; i<j; i++) {
-		if(gameConsole[i].checked){
-			consoleList.push(gameConsole[i].value);
-		}
-	}
-	localStorage.setItem("Game Console(s)", consoleList);
-};
-var getComments = function(){
-	localStorage.setItem("Comments", comments.value);
-};
-*/
 //Delete Local Storage
 function deleteLocalStorage(){
 	if(localStorage.length === 0){
@@ -110,65 +92,31 @@ function displayLocalStorage(){
 		return;
 	}
 	toggle("on");
-	var newDiv = document.createElement("ol");
+	var newDiv = document.createElement("ul");
 	newDiv.setAttribute("id", "list");
 	newDiv.setAttribute("display", "block");
-	var newList = document.createElement("ul");
-	newDiv.appendChild(newList);
 	document.body.appendChild(newDiv);
 	for(i=0, len=localStorage.length; i<len; i++){
-		var newLi = document.createElement("ol");
-		newList.appendChild(newLi);
 		var key = localStorage.key(i);
 		var value = localStorage.getItem(key);
-		console.log(value)
 		var newObj = JSON.parse(value);
-		var newSubUl = document.createElement("ul");
-		newLi.appendChild(newSubUl);
 		for(var n in newObj) {
-			var newSubLi = document.createElement("li");
-			newSubUl.appendChild(newSubLi);
+			var newLi = document.createElement("li");
+			newDiv.appendChild(newLi);
 			var newText = newObj[n][0]+" "+newObj[n][1];
-			newSubLi.innerHTML = newText;
+			newLi.innerHTML = newText;
 		}
-		var back = document.createElement("input");
-		back.setAttribute("type", "button");
-		back.setAttribute("id", "back");
-		back.setAttribute("value", "Back");
-		back
 	}
 };
 //Event Listeners
-
-var cat = gameCatergory.addEventListener("blur", getCatergory);
-var nam = gameName.addEventListener("blur", getName);
-var pub = gamePublisher.addEventListener("blur", getPublisher);
-var rel = gameRelease.addEventListener("change", getRelease);
-var rat = gameRate.addEventListener("change", getRate);
+var cat = submitButton.addEventListener("click", getCatergory);
+var nam = submitButton.addEventListener("click", getName);
+var pub = submitButton.addEventListener("click", getPublisher);
+var rel = submitButton.addEventListener("click", getRelease);
+var rat = submitButton.addEventListener("click", getRate);
 var con = submitButton.addEventListener("click", getConsole);
-var com = comments.addEventListener("blur", getComments);
+var com = submitButton.addEventListener("click", getComments);
+//Button and Link Listners
 clearData.addEventListener("click", deleteLocalStorage);
 displayData.addEventListener("click", displayLocalStorage);
-
-//Save Data
-function saveGame(){
-	var newId = Math.floor(Math.random()*1000000001)
-	var newType = {};
-	newType.catergory = ["Game Catergory: ", gameCatergory.value];
-	newType.name = ["Game Name: ", gameName.value];
-	newType.publisher = ["Game Publisher: ", gamePublisher.value];
-	newType.release = ["Game Release: ", gameRelease.value];
-	newType.rate = ["Game Rating: ", gameRate.value];
-	newType.console = ["Game Console: ", getConsole()];
-	newType.comments = ["Comments : ", comments.value];
-	localStorage.setItem(newId, JSON.stringify(newType));
-	alert(gameName.value + " Game Review Added!");
-}
-/*
-for (i=0; i<localStorage.length; i++){
-	var theKey = localStorage.key(i);
-	var theValue = localStorage.getItem(theKey);
-	console.log(theKey + ": " + theValue)
-}
-*/
 submitButton.addEventListener("click", saveGame);
