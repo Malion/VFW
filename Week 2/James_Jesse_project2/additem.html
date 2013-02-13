@@ -22,8 +22,8 @@
 	<body>
    	<h1 id="addGameReview">Add A Game Review</h1>
     <!-- Input Fields -->
-    <form action="#" method="post" id="gameReviewForm">
-      <fieldset>
+    <form action="#" method="post" id="gameReviewForm" />
+      <fieldset id="addItemField">
         <legend>Game Review</legend>
           <ul id="addItemForm">
               <li id="gameCatergoryList">
@@ -63,11 +63,11 @@
                       </li>
                       <li>
                           <input type="checkbox" value="Playstation 3" id="ps3" name="console" />
-                          <label for"ps3" class="ps3"> Playstation 3</label>
+                          <label for="ps3" class="ps3"> Playstation 3</label>
                       </li>
                       <li>
                           <input type="checkbox" value="Wii" id="wii" name="console" />
-                          <label for"wii" class="wii"> Wii</label>
+                          <label for="wii" class="wii"> Wii</label>
                       </li>
                   </ul>
               </li>
@@ -82,8 +82,9 @@
 	  <!-- Footer -->
 	  <footer>
 		<nav>
-			<a href="#" title="clearData">Clear Data</a>
-			<a href="#" title="displayData">Display Data</a>
+        	<!-- These links are handled by JavaScript -->
+			<a href="#" title="clearData" id="clearData">Clear Data</a>
+			<a href="#" title="displayData" id="displayData">Display Data</a>
 		</nav>
 	  </footer>
 	  <script type="text/javascript" src="js/main.js"></script> 
