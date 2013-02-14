@@ -39,30 +39,49 @@ function toggle(n){
 	}	
 }
 //Get value functions
-var populateForm = function(){
+var populateFormCatergory = function(){
 	var gameCatergoryKey = localStorage.key("gameCatergory");
 	var gameCatergoryValue = localStorage.getItem(gameCatergoryKey);
+	gameCatergory.value = gameCatergoryValue;
+};
+var populateFormName = function(){
 	var gameNameKey = localStorage.key("gameName");
 	var gameNameValue = localStorage.getItem(gameNameKey);
+	gameName.value = gameNameValue;
+};
+var populateFormPublisher = function(){
 	var gamePublisherKey = localStorage.key("gamePublisher");
 	var gamePublisherValue = localStorage.getItem(gamePublisherKey);
+	gamePublisher.value = gamePublisherValue;
+};
+var populateFormRelease = function(){
 	var gameReleaseKey = localStorage.key("gameRelease");
 	var gameReleaseValue = localStorage.getItem(gameReleaseKey);
+	gameRelease.value = gameReleaseValue;
+};
+var populateFormRate = function(){
 	var gameRateKey = localStorage.key("gameRate");
 	var gameRateValue = localStorage.getItem(gameRateKey);
+	gameRate.value = gameRateValue;
+};
+var populateFormConsole = function(){
 	var gameConsoleKey = localStorage.key("gameConsole");
 	var gameConsoleValue = localStorage.getItem(gameConsoleKey);
+	gameConsole.value = gameConsoleValue;
+};
+var populateFormComments = function(){
 	var commentsKey = localStorage.key("comments");
 	var commentsValue = localStorage.getItem(commentsKey);
-	gameCatergory.value = gameCatergoryValue;
-	gameName.value = gameNameValue;
-	gamePublisher.value = gamePublisherValue;
-	gameRelease.value = gameReleaseValue;
-	gameRate.value = gameRateValue;
-	gameConsole.value = gameConsoleValue;
 	comments.value = commentsValue;
-}
-populateForm();
+};
+populateFormCatergory();
+populateFormName();
+populateFormPublisher();
+populateFormRelease();
+populateFormRate();
+populateFormConsole();
+populateFormComments();
+
 var getCatergory = function(){
 	localStorage.setItem("gameCatergory", gameCatergory.value);
 	console.log(gameCatergory.value);
@@ -131,8 +150,8 @@ function displayLocalStorage(){
 		return;
 	};
 	toggle("on");
-	for(var o in localStorage){
-		var newObj = JSON.parse(localStorage[o])
+	for(var n in localStorage){
+		var newObj = JSON.parse(localStorage[n])
 		var newDiv = document.createElement("ul");
 		newDiv.setAttribute("class", "displayDataList");
 		newDiv.setAttribute("display", "block");
