@@ -17,6 +17,18 @@ var submitButton = document.getElementById("submitButton");
 function toggle(n){
 	switch(n){
 		case"on":
+			var back = document.createElement("a")
+			back.setAttribute("href", "additem.html");
+			back.setAttribute("id", "back");
+			document.body.appendChild(back);
+			back.innerHTML = "Back";
+			var clear = document.createElement("a");
+			clear.setAttribute("href", "#");
+			clear.setAttribute("id", "clearData2");
+			document.body.appendChild(clear);
+			clear.innerHTML = "Clear Data";
+			var displayClear = document.getElementById("clearData2");
+			displayClear.addEventListener("click", deleteLocalStorage);
 			document.getElementById("addItemField").style.display = "none";
 			document.getElementById("clearData").style.display = "none";
 			document.getElementById("displayData").style.display = "none";
@@ -27,38 +39,65 @@ function toggle(n){
 	}	
 }
 //Get value functions
+var populateForm = function(){
+	var gameCatergoryKey = localStorage.key("gameCatergory");
+	var gameCatergoryValue = localStorage.getItem(gameCatergoryKey);
+	var gameNameKey = localStorage.key("gameName");
+	var gameNameValue = localStorage.getItem(gameNameKey);
+	var gamePublisherKey = localStorage.key("gamePublisher");
+	var gamePublisherValue = localStorage.getItem(gamePublisherKey);
+	var gameReleaseKey = localStorage.key("gameRelease");
+	var gameReleaseValue = localStorage.getItem(gameReleaseKey);
+	var gameRateKey = localStorage.key("gameRate");
+	var gameRateValue = localStorage.getItem(gameRateKey);
+	var gameConsoleKey = localStorage.key("gameConsole");
+	var gameConsoleValue = localStorage.getItem(gameConsoleKey);
+	var commentsKey = localStorage.key("comments");
+	var commentsValue = localStorage.getItem(commentsKey);
+	gameCatergory.value = gameCatergoryValue;
+	gameName.value = gameNameValue;
+	gamePublisher.value = gamePublisherValue;
+	gameRelease.value = gameReleaseValue;
+	gameRate.value = gameRateValue;
+	gameConsole.value = gameConsoleValue;
+	comments.value = commentsValue;
+}
+populateForm();
 var getCatergory = function(){
-	var cat = gameCatergory.value;
-	return(cat);
+	localStorage.setItem("gameCatergory", gameCatergory.value);
+	console.log(gameCatergory.value);
 };
 var getName = function(){
-	var nam = gameName.value;
-	return(nam);
+	localStorage.setItem("gameName", gameName.value);
+	console.log(gameName.value);
 };
 var getPublisher = function(){
-	var pub = gamePublisher.value;
-	return(pub);
+	localStorage.setItem("gamePublisher", gamePublisher.value);
+	console.log(gamePublisher.value);
 };
 var getRelease = function(){
-	var rel = gameRelease.value;
-	return(rel);
+	localStorage.setItem("gameRelease", gameRelease.value);
+	console.log(gameRelease.value);
 };
 var getRate = function(){
-	var rat = gameRate.value;
-	return(rat);
+	var label = document.getElementById("ratingLabel");
+	label.innerHTML = "Game Rating(0-10): " + gameRate.value;
+	localStorage.setItem("gameRate", gameRate.value);
 };
 var getConsole = function(){
 	var con = [];
-	for(i=0, j=gameConsole.length; i<j; i++) {
+	for(i=0; i<gameConsole.length; i++) {
 		if(gameConsole[i].checked){
 			con.push(gameConsole[i].value);
+			console.log(gameConsole[i].value);
 		}
 	}
+	localStorage.setItem("gameConsole", con);
 	return(con);
 };
 var getComments = function(){
-	var com = comments.value;
-	return(com);
+	localStorage.setItem("comments", comments.value);
+	console.log(comments.value);
 };
 //Save Data
 function saveGame(){
@@ -109,13 +148,13 @@ function displayLocalStorage(){
 	};
 };
 //Event Listeners
-var cat = submitButton.addEventListener("click", getCatergory);
-var nam = submitButton.addEventListener("click", getName);
-var pub = submitButton.addEventListener("click", getPublisher);
-var rel = submitButton.addEventListener("click", getRelease);
-var rat = submitButton.addEventListener("click", getRate);
-var con = submitButton.addEventListener("click", getConsole);
-var com = submitButton.addEventListener("click", getComments);
+gameCatergory.addEventListener("blur", getCatergory);
+gameName.addEventListener("blur", getName);
+gamePublisher.addEventListener("blur", getPublisher);
+gameRelease.addEventListener("blur", getRelease);
+gameRate.addEventListener("change", getRate);
+submitButton.addEventListener("click", getConsole());
+comments.addEventListener("blur", getComments);
 //Button and Link Listners
 clearData.addEventListener("click", deleteLocalStorage);
 displayData.addEventListener("click", displayLocalStorage);

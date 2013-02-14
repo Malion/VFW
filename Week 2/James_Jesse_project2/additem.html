@@ -25,6 +25,11 @@
     <form action="#" method="post" id="gameReviewForm" />
       <fieldset id="addItemField">
         <legend>Game Review</legend>
+        	<nav>
+        		<!-- These links are handled by JavaScript -->
+				<a href="#" title="clearData" id="clearData">Clear Data</a>
+				<a href="#" title="displayData" id="displayData">Display Data</a>
+			</nav>
           <ul id="addItemForm">
               <li id="gameCatergoryList">
                 <label for="gameCatergory">Game Catergory:</label>
@@ -52,7 +57,7 @@
                   <input type="date" id="gameRelease" />
               </li>
               <li>
-                  <label for="gameRate">Game Rating(0-10): </label>
+                  <label id="ratingLabel" for="gameRate">Game Rating(0-10): 5</label>
                   <input type="range" id="gameRate" min="0" max="10" />
               </li>
               <li id="gameConsole">Game Console:
@@ -79,13 +84,5 @@
       <!-- Submit Button -->
       <input id="submitButton" type="button" value="Add Review" name="submit" />
 	  </body>
-	  <!-- Footer -->
-	  <footer>
-		<nav>
-        	<!-- These links are handled by JavaScript -->
-			<a href="#" title="clearData" id="clearData">Clear Data</a>
-			<a href="#" title="displayData" id="displayData">Display Data</a>
-		</nav>
-	  </footer>
 	  <script type="text/javascript" src="js/main.js"></script> 
 </html>

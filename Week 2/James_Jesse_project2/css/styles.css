@@ -101,6 +101,12 @@ legend {
 	font-weight:bold;
 	list-style:none;
 }
+#clearData2 {
+	margin: 10px
+}
+#back {
+	margin:10px
+}
 /*Displayed Data*/
 .catergory {
 	margin-bottom: 5px;
