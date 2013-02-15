@@ -151,7 +151,7 @@ function displayLocalStorage(){
 	};
 	toggle("on");
 	for(var n in localStorage){
-		var newObj = JSON.parse(localStorage[n])
+		var newObj = JSON.parse(localStorage[n]);
 		var newDiv = document.createElement("ul");
 		newDiv.setAttribute("class", "displayDataList");
 		newDiv.setAttribute("display", "block");
