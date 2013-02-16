@@ -1,7 +1,6 @@
 // Jesse James
 // 2-11-2013
 // VFW Project 2 1302
-
 //Global Variables
 var gameCatergory = document.getElementById("gameCatergory");
 var gameName = document.getElementById("gameName");
@@ -13,159 +12,172 @@ var comments = document.getElementById("comments");
 var clearData = document.getElementById("clearData");
 var displayData = document.getElementById("displayData");
 var submitButton = document.getElementById("submitButton");
+var types = [gameCatergory, gameName, gamePublisher, gameRelease, gameRate, gameConsole, comments];
+var types2 = ["Game Catergory: ", "Game Name: ", "Game Publisher: ", "Game Release: ", "Game Rate: ", "Game Console: ", "Comments: "];
 //Toggle
-function toggle(n){
-	switch(n){
-		case"on":
-			var back = document.createElement("a")
-			back.setAttribute("href", "additem.html");
-			back.setAttribute("id", "back");
-			document.body.appendChild(back);
-			back.innerHTML = "Back";
-			var clear = document.createElement("a");
-			clear.setAttribute("href", "#");
-			clear.setAttribute("id", "clearData2");
-			document.body.appendChild(clear);
-			clear.innerHTML = "Clear Data";
-			var displayClear = document.getElementById("clearData2");
-			displayClear.addEventListener("click", deleteLocalStorage);
-			document.getElementById("addItemField").style.display = "none";
-			document.getElementById("clearData").style.display = "none";
-			document.getElementById("displayData").style.display = "none";
-			document.getElementById("submitButton").hidden = "hidden";
-			document.getElementById("addGameReview").innerHTML = "Game List";
-		case"off":
-			document.getElementById("addItemField").removeAttribute("display", "block");
-	}	
+function toggle(n) {
+    switch (n) {
+        case "on":
+            var back = document.createElement("a")
+            back.setAttribute("href", "additem.html");
+            back.setAttribute("id", "back");
+            document.body.appendChild(back);
+            back.innerHTML = "Back";
+            var clear = document.createElement("a");
+            clear.setAttribute("href", "#");
+            clear.setAttribute("id", "clearData2");
+            document.body.appendChild(clear);
+            clear.innerHTML = "Clear Data";
+            var displayClear = document.getElementById("clearData2");
+            displayClear.addEventListener("click", deleteLocalStorage);
+            document.getElementById("addItemField").style.display = "none";
+            document.getElementById("clearData").style.display = "none";
+            document.getElementById("displayData").style.display = "none";
+            document.getElementById("submitButton").hidden = "hidden";
+            document.getElementById("addGameReview").innerHTML = "Game List";
+        case "off":
+            document.getElementById("addItemField").removeAttribute("display", "block");
+    }
 }
-//Get value functions
-var populateFormCatergory = function(){
-	var gameCatergoryKey = localStorage.key("gameCatergory");
-	var gameCatergoryValue = localStorage.getItem(gameCatergoryKey);
-	gameCatergory.value = gameCatergoryValue;
+//Populate form loop
+var populateForm = function () {
+    for (i = 0; i < types2.length; i++) {
+        var key = types2[i]
+        var value = localStorage.getItem(key)
+        if (value != undefined) {
+            types[i].value = value
+        }
+    }
+}
+// Get Value Functions
+var getCatergory = function () {
+    localStorage.setItem("Game Catergory: ", gameCatergory.value);
 };
-var populateFormName = function(){
-	var gameNameKey = localStorage.key("gameName");
-	var gameNameValue = localStorage.getItem(gameNameKey);
-	gameName.value = gameNameValue;
+var getName = function () {
+    localStorage.setItem("Game Name: ", gameName.value);
 };
-var populateFormPublisher = function(){
-	var gamePublisherKey = localStorage.key("gamePublisher");
-	var gamePublisherValue = localStorage.getItem(gamePublisherKey);
-	gamePublisher.value = gamePublisherValue;
+var getPublisher = function () {
+    localStorage.setItem("Game Publisher: ", gamePublisher.value);
 };
-var populateFormRelease = function(){
-	var gameReleaseKey = localStorage.key("gameRelease");
-	var gameReleaseValue = localStorage.getItem(gameReleaseKey);
-	gameRelease.value = gameReleaseValue;
+var getRelease = function () {
+    localStorage.setItem("Game Release: ", gameRelease.value);
 };
-var populateFormRate = function(){
-	var gameRateKey = localStorage.key("gameRate");
-	var gameRateValue = localStorage.getItem(gameRateKey);
-	gameRate.value = gameRateValue;
+var getRate = function () {
+    var label = document.getElementById("ratingLabel");
+    label.innerHTML = "Game Rating(0-10): " + gameRate.value;
+    localStorage.setItem("Game Rate: ", gameRate.value);
 };
-var populateFormConsole = function(){
-	var gameConsoleKey = localStorage.key("gameConsole");
-	var gameConsoleValue = localStorage.getItem(gameConsoleKey);
-	gameConsole.value = gameConsoleValue;
+var getConsole = function () {
+    var con = [];
+    for (i = 0; i < gameConsole.length; i++) {
+        if (gameConsole[i].checked) {
+            con.push(gameConsole[i].value);
+        }
+    }
+    localStorage.setItem("Game Console: ", con);
+    return (con);
 };
-var populateFormComments = function(){
-	var commentsKey = localStorage.key("comments");
-	var commentsValue = localStorage.getItem(commentsKey);
-	comments.value = commentsValue;
+var getComments = function () {
+    localStorage.setItem("Comments: ", comments.value);
 };
-populateFormCatergory();
-populateFormName();
-populateFormPublisher();
-populateFormRelease();
-populateFormRate();
-populateFormConsole();
-populateFormComments();
-
-var getCatergory = function(){
-	localStorage.setItem("gameCatergory", gameCatergory.value);
-	console.log(gameCatergory.value);
-};
-var getName = function(){
-	localStorage.setItem("gameName", gameName.value);
-	console.log(gameName.value);
-};
-var getPublisher = function(){
-	localStorage.setItem("gamePublisher", gamePublisher.value);
-	console.log(gamePublisher.value);
-};
-var getRelease = function(){
-	localStorage.setItem("gameRelease", gameRelease.value);
-	console.log(gameRelease.value);
-};
-var getRate = function(){
-	var label = document.getElementById("ratingLabel");
-	label.innerHTML = "Game Rating(0-10): " + gameRate.value;
-	localStorage.setItem("gameRate", gameRate.value);
-};
-var getConsole = function(){
-	var con = [];
-	for(i=0; i<gameConsole.length; i++) {
-		if(gameConsole[i].checked){
-			con.push(gameConsole[i].value);
-			console.log(gameConsole[i].value);
-		}
-	}
-	localStorage.setItem("gameConsole", con);
-	return(con);
-};
-var getComments = function(){
-	localStorage.setItem("comments", comments.value);
-	console.log(comments.value);
-};
-//Save Data
-function saveGame(){
-	var newId = Math.floor(Math.random()*1000000001)
-	var newType = {};
-	newType.catergory = ["Game Catergory: ", gameCatergory.value];
-	newType.name = ["Game Name: ", gameName.value];
-	newType.publisher = ["Game Publisher: ", gamePublisher.value];
-	newType.release = ["Game Release: ", gameRelease.value];
-	newType.rate = ["Game Rating: ", gameRate.value];
-	newType.console = ["Game Console: ", getConsole()];
-	newType.comments = ["Comments: ", comments.value];
-	localStorage.setItem(newId, JSON.stringify(newType));
-	alert(gameName.value + " Game Review Added!");
-};
-//Delete Local Storage
-function deleteLocalStorage(){
-	if(localStorage.length === 0){
-		alert("There is no data to clear!");
-	} else {
-		localStorage.clear();
-		alert("All data has been deleted");
-		window.location.reload();
+//Form Validation
+var formValid = function(){
+	if(gameCatergory.value == "" || gameCatergory.value == "Catergory"){
+		alert("Please enter a catergory!");
+		gameCatergory.focus();
 		return false;
 	}
+	if(gameName.value == ""){
+		alert("Please enter a game name!");
+		gameName.focus();
+		return false;
+	}
+	if(gamePublisher.value == ""){
+		alert("Please enter a Publisher!");
+		gamePublisher.focus();
+		return false;
+	}
+	if(gameRelease.value == ""){
+		alert("Please enter a release date!");
+		gameRelease.focus();
+		return false;
+	}
+	if(gameRate.value == ""){
+		alert("Please enter a rating!");
+		gameRate.focus();
+		return false;
+	}
+	if(gameConsole.xbox360.checked || gameConsole.ps3.checked || gameConsole.wii.checked){
+	}else{
+		alert("Please select a console!");
+		return false;
+	}
+	return true;
+}
+//Save Data
+function saveGame() {
+	if(formValid() === true){
+		var newId = Math.floor(Math.random() * 1000000001)
+		var newType = {};
+		newType.catergory = ["Game Catergory: ", gameCatergory.value];
+		newType.name = ["Game Name: ", gameName.value];
+		newType.publisher = ["Game Publisher: ", gamePublisher.value];
+		newType.release = ["Game Release: ", gameRelease.value];
+		newType.rate = ["Game Rating: ", gameRate.value];
+		newType.console = ["Game Console: ", getConsole()];
+		newType.comments = ["Comments: ", comments.value];
+		localStorage.setItem(newId, JSON.stringify(newType));
+		alert(gameName.value + " Game Review Added!");
+		localStorage.removeItem("Game Catergory: ");
+		localStorage.removeItem("Game Name: ");
+		localStorage.removeItem("Game Publisher: ");
+		localStorage.removeItem("Game Release: ");
+		localStorage.removeItem("Game Rating: ");
+		localStorage.removeItem("Game Console: ");
+		localStorage.removeItem("Comments: ");
+		return;
+	}
+};
+//Delete Local Storage
+function deleteLocalStorage() {
+    if (localStorage.length === 0) {
+        alert("There is no data to clear!");
+    } else {
+        localStorage.clear();
+        alert("All data has been deleted");
+        window.location.reload();
+        return false;
+    }
 }
 //Display Data
-function displayLocalStorage(){
-	if(localStorage.length === 0){
-		alert("There are no saved reviews!");
-		return;
-	};
+function displayLocalStorage() {
+    if (isNaN(localStorage.key(0))) {
+        alert("There are no saved reviews!");
+        return;
+    };
 	toggle("on");
-	for(var n in localStorage){
-		var newObj = JSON.parse(localStorage[n]);
-		var newDiv = document.createElement("ul");
-		newDiv.setAttribute("class", "displayDataList");
-		newDiv.setAttribute("display", "block");
-		document.body.appendChild(newDiv);
-		for(var n in newObj) {
-			var newLi = document.createElement("li");
-			newLi.setAttribute("class", n);
-			newDiv.appendChild(newLi);
-			var newText = newObj[n][0]+" "+newObj[n][1];
-			newLi.innerHTML = newText;
+    for (i=0; i<localStorage.length; i++) {
+		if(isNaN(localStorage.key(i))){
+		}else{
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			var newObj = JSON.parse(value);
+			var newDiv = document.createElement("ul");
+			newDiv.setAttribute("class", "displayDataList");
+			newDiv.setAttribute("display", "block");
+			document.body.appendChild(newDiv);
+			for (var o in newObj) {
+				var newLi = document.createElement("li");
+				newLi.setAttribute("class", o);
+				newDiv.appendChild(newLi);
+				var newText = newObj[o][0] + " " + newObj[o][1];
+				newLi.innerHTML = newText;
+        	};
 		};
-		
-	};
+    };
 };
+//Populate past data
+populateForm()
 //Event Listeners
 gameCatergory.addEventListener("blur", getCatergory);
 gameName.addEventListener("blur", getName);
