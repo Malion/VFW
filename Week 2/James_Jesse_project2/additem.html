@@ -32,18 +32,7 @@
 			</nav>
           <ul id="addItemForm">
               <li id="gameCatergoryList">
-                <label for="gameCatergory">Game Catergory:</label>
-                  <select id="gameCatergory">
-                      <optgroup label="Catergory">
-                      	  <option value="Catergory" selected="selected">Catergory</option>
-                          <option value="Action">Action</option>
-                          <option value="Adventure">Adventure</option> 
-                          <option value="FPS">First Person Shooter</option>
-                          <option value="Racing">Racing</option>                      	
-                          <option value="Role-Playing">Role-Playing</option>
-                          <option value="Strategy">Strategy</option>
-                      </optgroup>
-                  </select>
+                <label for="gameCatergory">Game Catergory: </label>
               </li>
               <li>
                   <label for="gameName">Game Name: </label>
@@ -57,7 +46,7 @@
                   <label for="gameRelease">Game Release Date: </label>
                   <input type="date" id="gameRelease" />
               </li>
-              <li>
+              <li id="rl">
                   <label id="ratingLabel" for="gameRate">Game Rating(0-10): </label>
                   <input type="range" id="gameRate" min="0" max="10" />
               </li>
@@ -77,7 +66,7 @@
                       </li>
                   </ul>
               </li>
-              <li>
+              <li id="comm">
                   <label for="comments">Comments: </label><textarea id="comments" placeholder="This game was amazing A++!"></textarea>
               </li>
           </ul>

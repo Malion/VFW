@@ -25,6 +25,7 @@ textarea {
 	background-image: -webkit-linear-gradient(top right, #00A3EF 0%, #00618F 100%);
 	width: 300px;
 	border: 2px dashed black;
+	padding:5px;
 }
 /*Body*/
 body {
@@ -40,6 +41,7 @@ legend {
 	background-image: -webkit-linear-gradient(top right, #00A3EF 0%, #00618F 100%);
 	font-size:24px;
 	font-weight:bold;
+	padding:5px;
 }
 #addItemForm {
 	border: 1px solid black;
