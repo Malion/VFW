@@ -1,0 +1,165 @@
+/* 
+ Jesse James 
+ 2-22-2013 
+ VFW Project 3 1302 
+*/
+
+/*Universal*/
+label {
+	font-weight: bold;
+	font-size:20px;
+}
+select {
+	margin-bottom:10px;
+}
+input {
+	margin-bottom:10px;
+}
+textarea {
+	margin:10px;
+}
+/*Header*/
+#addGameReview {
+	font-family: "MS Serif", "New York", serif;
+	color: #000;
+	background-image: -webkit-linear-gradient(top right, #00A3EF 0%, #00618F 100%);
+	width: 300px;
+	border: 2px dashed black;
+	padding:5px;
+}
+/*Body*/
+body {
+	background-color: #CCC;
+}
+fieldset {
+	background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #00A3EF 100%);
+	width: 300px;
+	border: 2px dashed black;
+}
+legend {
+	border: 1px solid black;
+	background-image: -webkit-linear-gradient(top right, #00A3EF 0%, #00618F 100%);
+	font-size:24px;
+	font-weight:bold;
+	padding:5px;
+}
+#addItemForm {
+	border: 1px solid black;
+	background-image: -webkit-linear-gradient(top right, #00A3EF 0%, #00618F 100%);
+}
+#gameCatergory {
+	display: block;
+}
+#gameName {
+	display: block;
+}
+#gamePublisher {
+	display: block;
+}
+#gameRelease {
+	display: block;
+}
+#gameRate {
+	display: block;
+	width: 250px;
+	alignment-baseline:middle
+}
+#consoleList {
+	list-style-type:none;
+}
+#gameConsole {
+	font-size: 20px;
+	font-weight: bold;
+}
+#xbox360 {
+	margin-bottom: 1px;
+}
+.xbox360 {
+	font-weight:normal;
+	font-size:16px;
+	margin-bottom: 1px;
+}
+#ps3 {
+	margin-bottom: 1px;
+}
+.ps3 {
+	font-weight:normal;
+	font-size:16px;
+	margin-bottom: 1px;
+}
+#wii {
+	margin-bottom: 1px;
+}
+.wii {
+	font-weight:normal;
+	font-size:16px;
+	margin-bottom: 1px;
+}
+.displayDataList {
+	border: 1px dashed black;
+	background-image: -webkit-linear-gradient(top right, #00A3EF 0%, #00618F 100%);
+	width: 300px;
+	font-size:20px;
+	font-weight:bold;
+	list-style:none;
+}
+#clearData2 {
+	margin: 10px
+}
+#back {
+	margin:10px
+}
+/*Displayed Data*/
+.catergory {
+	margin-bottom: 5px;
+}
+.name {
+	margin-bottom: 5px;
+}
+.publisher {
+	margin-bottom: 5px;
+}
+.release {
+	margin-bottom: 5px;
+}
+.rate {
+	margin-bottom: 5px;
+}
+.console {
+	margin-bottom: 5px;
+}
+.comments {
+	margin-bottom: 5px;
+}
+#deleteEntry {
+	margin: 10px;
+	margin-right: 20px;
+	font-size: 16px;
+	font-style:normal;
+	font-weight:normal;
+}
+#editEntry {
+	margin: 10px;
+	margin-left: 20px;
+	font-size: 16px;
+	font-style:normal;
+	font-weight:normal;
+}
+/*Footer*/
+a:link {
+	color: #00C;
+	text-decoration: underline;
+}
+a:visited {
+	text-decoration: underline;
+	color: #30C;
+}
+a:hover {
+	text-decoration: none;
+	color: #306;
+}
+a:active {
+	text-decoration: underline;
+	color: #00C;
+}
+
