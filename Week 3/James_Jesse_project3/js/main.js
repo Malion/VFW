@@ -54,6 +54,11 @@ window.addEventListener("DOMContentLoaded",function(){
 				clear.innerHTML = "Clear Data";
 				var displayClear = document.getElementById("clearData2");
 				displayClear.addEventListener("click", deleteLocalStorage);
+				if($("editButton") === null || $("editButton") === undefined){
+				} else {
+					var thisEditButton = $("editButton")
+					document.body.removeChild(thisEditButton);
+				}
 				$("addItemField").style.display = "none";
 				$("clearData").style.display = "none";
 				$("displayData").style.display = "none";
@@ -146,7 +151,7 @@ window.addEventListener("DOMContentLoaded",function(){
 			gameRate.focus();
 			return false;
 		}
-		if(gameConsole.xbox360.checked || gameConsole.ps3.checked || gameConsole.wii.checked){
+		if(xbox360.checked || ps3.checked || wii.checked){
 		}else{
 			alert("Please select a console!");
 			return false;
@@ -245,9 +250,9 @@ window.addEventListener("DOMContentLoaded",function(){
 	//Delete Entry Function
 	function deleteThis() {
 		var thisConfirm = confirm("Are you sure you want to delete this entry?")
-		if(thisConfirm === true){
+		if(thisConfirm){
 			localStorage.removeItem(this.key);
-			alert("Please return to this page to see the changes you have made.");
+			location.reload();
 		} else {
 			return;
 		};
@@ -314,6 +319,7 @@ window.addEventListener("DOMContentLoaded",function(){
 				listLinks(key, thisLi);
 			};
 		};
+		//This is for the event listeners on the new links because it wouldnt work the other way.
 		for(i=0; i<document.getElementsByClassName("displayDataList").length; i++){
 					var eachDelete =document.getElementsByClassName("deleteEntry")[i];
 					var eachEdit = document.getElementsByClassName("editEntry")[i];
