@@ -112,7 +112,7 @@ window.addEventListener("DOMContentLoaded",function(){
 	};
 	var getRate = function () {
 		var label = document.getElementById("ratingLabel");
-		label.innerHTML = "Game Rating(0-10): " + gameRate.value;
+		label.innerHTML = "Game Rating(0-10):";
 		localStorage.setItem("Game Rate: ", gameRate.value);
 	};
 	var getConsole = function () {
