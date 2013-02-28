@@ -412,8 +412,6 @@ a:active {
 	position: relative;
 	top: -4px;
 	left: 4px;
-	background: #1d2e38;
-	background: -webkit-linear-gradient(top right, #FFFFFF 0%, #00A3EF 100%);
 	background: -webkit-linear-gradient(top right, #FFFFFF 0%, #00A3EF 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d2e38', endColorstr='#2b4254',GradientType=1 );
 	border-radius: 40px;
